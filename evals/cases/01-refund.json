@@ -1,0 +1,16 @@
+{
+  "name": "refund-eligible",
+  "ticket": {
+    "id": "T-1001",
+    "subject": "Refund request",
+    "body": "I would like a refund for order A-1001, it arrived 12 days ago.",
+    "customer": "customer@example.test"
+  },
+  "script": [
+    { "tool": "get_order", "args": { "order_id": "A-1001" }, "text": "check the order" },
+    { "tool": "search_kb", "args": { "query": "refund policy" }, "text": "check the policy" },
+    { "tool": "draft_reply", "args": { "body": "Dear customer, your order is within the 30 day window..." }, "text": "draft the reply" }
+  ],
+  "expect_tools": ["get_order", "search_kb"],
+  "expect_stop": "needs_approval"
+}

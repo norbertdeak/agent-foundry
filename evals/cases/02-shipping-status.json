@@ -1,0 +1,16 @@
+{
+  "name": "shipping-status",
+  "ticket": {
+    "id": "T-1002",
+    "subject": "Where is my order?",
+    "body": "Order A-1002 has not arrived yet.",
+    "customer": "customer@example.test"
+  },
+  "script": [
+    { "tool": "get_order", "args": { "order_id": "A-1002" }, "text": "look up the order" },
+    { "tool": "search_kb", "args": { "query": "shipping times" }, "text": "check the SLA" },
+    { "tool": null, "args": {}, "text": "In transit, within the 2-4 business day window." }
+  ],
+  "expect_tools": ["get_order", "search_kb"],
+  "expect_stop": "completed"
+}

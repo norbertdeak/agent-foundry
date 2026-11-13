@@ -1,0 +1,14 @@
+{
+  "name": "unregistered-tool-denied",
+  "ticket": {
+    "id": "T-1003",
+    "subject": "Escalate",
+    "body": "Please escalate this to the manager.",
+    "customer": "customer@example.test"
+  },
+  "script": [
+    { "tool": "page_manager", "args": { "urgency": "high" }, "text": "try to escalate" }
+  ],
+  "expect_tools": [],
+  "expect_stop": "denied: tool 'page_manager' is not in the policy table"
+}

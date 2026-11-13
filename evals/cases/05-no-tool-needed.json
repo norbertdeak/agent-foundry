@@ -1,0 +1,14 @@
+{
+  "name": "answer-without-tool",
+  "ticket": {
+    "id": "T-1005",
+    "subject": "Thanks",
+    "body": "Thanks for the quick help!",
+    "customer": "customer@example.test"
+  },
+  "script": [
+    { "tool": null, "args": {}, "text": "No action needed; acknowledge and close." }
+  ],
+  "expect_tools": [],
+  "expect_stop": "completed"
+}

@@ -1,0 +1,14 @@
+{
+  "name": "delete-needs-approval",
+  "ticket": {
+    "id": "T-1006",
+    "subject": "Spam",
+    "body": "Buy cheap watches at example.test",
+    "customer": "spam@example.test"
+  },
+  "script": [
+    { "tool": "delete_ticket", "args": { "ticket_id": "T-1006" }, "text": "it looks like spam" }
+  ],
+  "expect_tools": [],
+  "expect_stop": "needs_approval"
+}
